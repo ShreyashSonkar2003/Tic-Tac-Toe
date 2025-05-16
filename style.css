@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('photo-1620641788421-7a1c342ea42e.avif'); /* Replace with your image path */
+    background-size: cover;           /* Makes the image cover the whole body */
+    background-repeat: no-repeat;     /* Prevents repeating the image */
+    background-position: center;      /* Centers the image */
+    background-attachment: fixed;  
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;   /* Keeps the image fixed during scroll (optional) */
+
+  }
+
+h1 {
+    font-weight: bolder;
+    margin-top: 5vh;
+    font-size: 4vw;
+    margin-top: 100px;
+}
+
+.container {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 90vmin;
+    max-width: 400px;
+    margin: auto;
+}
+
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    font-size: 8vmin;
+    color: rgb(128, 0, 255);
+    background-color: whitesmoke;
+    transition: background-color 0.2s ease;
+}
+
+.box:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+#resetBtn, #new-btn {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+#msg {
+    color: white;
+    font-size: 8vmin;
+    text-align: center;
+}
+
+.msg-container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 7vw;
+    }
+
+    .box {
+        font-size: 10vmin;
+    }
+
+    #resetBtn, #new-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    #msg {
+        font-size: 10vmin;
+    }
+
+    .game {
+        gap: 0.75rem;
+    }
+}
